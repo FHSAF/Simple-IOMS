@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    {% include '_partials/_alerts.html' %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header text-center">
+        <h3 class="title">Customer Information Form</h3>
+      </div>
+      <div class="card-body">
+        <form method="POST"> {% csrf_token %}
+            {{ form.non_field_errors }}
+          <div class="row">
+            <div class="form-group col-md-4">
+              {{ form.customer_id.errors }}
+              <label for="{{ form.customer_id.id_for_label }}">Customer ID</label>
+              {{ form.customer_id }}
+            </div>
+            <div class="form-group col-md-4">
+              {{ form.contract_duration.errors }}
+              <label for="{{ form.contract_duration.id_for_label }}">Contract Duration</label>
+              {{ form.contract_duration }}
+            </div>
+            <div class="form-group col-md-4">
+              {{ form.device_offer.errors }}
+              <label for="{{ form.device_offer.id_for_label }}">Device Offer</label>
+              {{ form.device_offer }}
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4">
+              {{ form.charge_per_month.errors }}
+              <label for="{{ form.charge_per_month.id_for_label }}">Internet Charge Monthly</label>
+              {{ form.charge_per_month }}
+            </div>
+            <div class="form-group col-md-3">
+              {{ form.device_charge.errors }}
+              <label for="{{ form.device_charge.id_for_label }}">Device Charge</label>
+              {{ form.device_charge }}
+            </div>
+            <div class="form-group col-md-2">
+              {{ form.paymet_currency.errors }}
+              <label for="{{ form.paymet_currency.id_for_label }}">Payment Currency</label>
+              {{ form.paymet_currency }}
+            </div>
+            <div class="form-group col-md-3">
+              {{ form.extra_fees.errors }}
+              <label for="{{ form.extra_fees.id_for_label }}">Extra Fees</label>
+              {{ form.extra_fees }}
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+                {{ form.paid_money.errors }}
+                <label for="{{ form.paid_money.id_for_label }}">Money Paid</label>
+                {{ form.paid_money }}
+            </div>
+
+            <div class="form-group col-md-2">
+              {{ form.package_used.errors }}
+              <label for="{{ form.package_used.id_for_label }}">Internet Package</label>
+              {{ form.package_used }}
+            </div>
+
+            <div class="form-group col-md-2">
+              {{ form.customer_net_usecase.errors }}
+              <label for="{{ form.customer_net_usecase.id_for_label }}">User Case</label>
+              {{ form.customer_net_usecase }}
+            </div>
+
+            <div class="form-group col-md-2">
+              {{ form.acquaintance_method.errors }}
+              <label for="{{ form.acquaintance_method.id_for_label }}">How did you find VN?</label>
+              {{ form.acquaintance_method }}
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="form-group col-md-6">
+                {{ form.document.errors }}
+                <label for="{{ form.document.id_for_label }}">Document Provided</label>
+                {{ form.document }}
+              </div>
+              <div class="form-group col-md-6">
+                {{ form.devices_used.errors }}
+                <label for="{{ form.devices_used.id_for_label }}">Equipment need</label>
+                {{ form.devices_used }}
+              </div>
+          </div>
+
+          <div class="row">
+
+            <div class="form-group col-md-8">
+              {{ form.description.errors }}
+              <label for="{{ form.description.id_for_label }}">Any Other Descriptions</label>
+              {{ form.description }}
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-fill btn-primary">Save</button>
+        </form>
+      </div>
+      <div class="card-footer">
+
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    {% include '_partials/_alerts.html' %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header text-center">
+        <h3 class="title">Customer Information Form</h3>
+      </div>
+      <div class="card-body">
+        <form method="POST"> {% csrf_token %}
+            {{ form.non_field_errors }}
+          <div class="row">
+              <div class="form-group col-md-2">
+                {{ form.customer_id.errors }}
+                <label for="{{ form.customer_id.id_for_label }}">ID:</label>
+                {{ form.customer_id }}
+              </div>
+            <div class="form-group col-md-4">
+              {{ form.name.errors }}
+              <label for="{{ form.name.id_for_label }}">Customer Name:</label>
+              {{ form.name }}
+            </div>
+            <div class="form-group col-md-4">
+              {{ form.surename.errors }}
+              <label for="{{ form.surename.id_for_label }}">Customer Surename:</label>
+              {{ form.surename }}
+            </div>
+            <div class="form-group col-md-2">
+              {{ form.customer_type.errors }}
+              <label for="{{ form.customer_type.id_for_label }}">Customer Status:</label>
+              {{ form.customer_type }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-2">
+              {{ form.gender.errors }}
+              <label for="{{ form.gender.id_for_label }}">Gender:</label>
+              {{ form.gender }}
+            </div>
+            <div class="form-group col-md-6">
+              {{ form.occupation.errors }}
+              <label for="{{ form.occupation.id_for_label }}">Occupation:</label>
+              {{ form.occupation }}
+            </div>
+            <div class="form-group col-md-4">
+              {{ form.N_ID_NO.errors }}
+              <label for="{{ form.N_ID_NO.id_for_label }}">National ID No:</label>
+              {{ form.N_ID_NO }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4">
+              {{ form.phone_number.errors }}
+              <label for="{{ form.phone_number.id_for_label }}">Phone Number:</label>
+              {{ form.phone_number }}
+            </div>
+            <div class="form-group col-md-4">
+              {{ form.phone_number_backup.errors }}
+              <label for="{{ form.phone_number_backup.id_for_label }}">Phone Number Backup:</label>
+              {{ form.phone_number_backup }}
+            </div>
+            <div class="form-group col-md-4">
+              {{ form.email_add.errors }}
+              <label for="{{ form.email_add.id_for_label }}">Email Add:</label>
+              {{ form.email_add }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-5">
+              {{ form.country.errors }}
+              <label for="{{ form.country.id_for_label }}">Country:</label>
+              {{ form.country }}
+            </div>
+            <div class="form-group col-md-5">
+              {{ form.passport_number.errors }}
+              <label for="{{ form.passport_number.id_for_label }}">Passport No:</label>
+              {{ form.passport_number }}
+            </div>
+            <div class="form-group col-md-2">
+              {{ form.photo.errors }}
+              <label for="{{ form.photo.id_for_label }}">Photo:</label>
+              {{ form.photo }}
+              <div class="upload-icon">
+                  <span>Upload <i class="fa fa-upload"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-8">
+              {{ form.address.errors }}
+              <label for="{{ form.address.id_for_label }}">Customer Address:</label>
+              {{ form.address }}
+            </div>
+          </div>
+          <button type="submit" class="btn btn-fill btn-primary">Save</button>
+        </form>
+      </div>
+      <div class="card-footer">
+
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endblock %}

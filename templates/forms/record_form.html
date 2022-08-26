@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    {% include '_partials/_alerts.html' %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header text-center">
+        <h3 class="title">Recording Devices Sperately By Thier unique characteristics</h3>
+      </div>
+      {% if to_berecorded %}
+      <div class="card-header text-center">
+        <p>You have {{ count }} purchaces to be recorded: </p>
+        {% for key, value in deviceItems.items %}
+            <p> {{ key }} {{value}}  </p>
+        {% endfor %}
+      </div>
+      <div class="card-body">
+          <form method="POST"> {% csrf_token %}
+              {{ form.non_field_errors }}
+            <div class="row">
+              <div class="form-group col-md-4">
+                {{ form.device_name.errors }}
+                <label for="{{ form.device_name.id_for_label }}">Device Name</label>
+                {{ form.device_name }}
+              </div>
+
+              <div class="form-group col-md-8">
+                {{ form.unique_parameter.errors }}
+                <label for="{{ form.unique_parameter.id_for_label }}">MAC Address</label>
+                {{ form.unique_parameter }}
+              </div>
+            </div>
+            <button type="submit" class="btn btn-fill btn-primary">Save</button>
+          </form>
+      </div>
+      {% else %}
+      <div class="card-header text-center">
+          <p> You are all done!</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  </div>
+  {% endblock %}

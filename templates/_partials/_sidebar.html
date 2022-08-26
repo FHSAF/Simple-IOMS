@@ -1,0 +1,63 @@
+{% load static %}
+<div class="sidebar">
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <a href="javascript:void(0)" class="simple-text logo-mini">
+        <img src="{% static 'images/w.png' %}" alt="" height="30px">
+      </a>
+      <a href="javascript:void(0)" class="simple-text logo-normal">
+        Vira Nawawaran
+      </a>
+    </div>
+    <ul class="nav">
+      <li {% if "/" == request.path%} class="active" {% endif %}>
+        <a href="{% url 'index_view_url' %}">
+          <i class="tim-icons icon-chart-pie-36"></i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li {% if "customer-info" in request.path %} class="active" {% endif %}>
+        <a href="{% url 'customer_info_url' %}"">
+          <i class="fa fa-users" aria-hidden="true"></i>
+          <p>Customer Info</p>
+        </a>
+      </li>
+      <li {% if "customer-contract" in request.path %} class="active" {% endif %}>
+        <a href="{% url 'customer-contract-url' %}">
+          <i class="fa fa-handshake" aria-hidden="true"></i>
+          <p>Customer Contract</p>
+        </a>
+      </li>
+      <li {% if "installation_troublshooting" in request.path %} class="active" {% endif %}>
+        <a href="{% url 'ins_trob_url' %}">
+          <i class="fa fa-wrench" aria-hidden="true"></i>
+          <p>Ins & Trob Form</p>
+        </a>
+      </li>
+      <li {% if "report" in request.path %} class="active" {% endif %}>
+        <a href="{% url 'report_url' %}">
+          <i class="tim-icons icon-puzzle-10"></i>
+          <p>Report</p>
+        </a>
+      </li>
+      <li {% if "record-goods" in request.path %} class="active" {% endif %}>
+        <a href="{% url 'record-url' %}">
+          <i class="fa fa-handshake" aria-hidden="true"></i>
+          <p>Record Goods</p>
+        </a>
+      </li>
+      <li {% if "profile" in request.path %} class="active" {% endif %}>
+        <a href="{% url 'user_profile' %}">
+          <i class="tim-icons icon-single-02"></i>
+          <p>User Profile</p>
+        </a>
+      </li>
+      <li {% if "input-stock" in request.path %} class="active" {% endif %}>
+        <a href="{% url 'input-stock-url' %}">
+          <i class="tim-icons icon-single-02"></i>
+          <p>Stock Input Form</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

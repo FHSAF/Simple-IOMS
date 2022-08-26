@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content">
+        {% include '_partials/_alerts.html' %}
+        <div class="row">
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header">
+              <h4 class="card-title"> Simple Table</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table tablesorter " id="">
+                  <thead class=" text-primary">
+                    <tr>
+                      <th>
+                        Name & ID
+                      </th>
+                      <th>
+                          Depth
+                      </th>
+                      <th>
+                         Contract Duration
+                      </th>
+                      <th>
+                         Remained Time
+                      </th>
+                      <th>
+                          Package
+                      </th>
+                      <th>
+                          Charge/Month
+                      </th>
+                      <th>
+                          Device
+                      </th>
+                      <th>
+                          Round
+                      </th>
+                      <th class="text-center">
+                        Report
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      {% if customers %}
+                        {% for customer in customers %}
+                            <tr>
+                              <td>
+                                {{ customer.customer_personal_info }}
+                              </td>
+                              <td>
+                                {{ customer.get_dept }}
+                              </td>
+                              <td>
+                                {{ customer.contract_duration }}
+                              </td>
+                              <td>
+                                {{ customer.exp_date }}
+                              </td>
+                              <td>
+                                {{ customer.package_used }}
+                              </td>
+                              <th>
+                                  {{ customer.charge_per_month }}
+                              </th>
+                              <td>
+                                {{ customer.device_offer }}
+                              </td>
+                              <td>
+                                  {{ customer.contract_period }}
+                              </td>
+                              <td class="text-center">
+                                <a href="{% url 'customer_report_url' customer.pk %}"><button class="btn btn-primary">print</button></a>
+                              </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}

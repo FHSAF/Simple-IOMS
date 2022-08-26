@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style type="text/css">
+    @page {
+           size: A4;
+           margin: 1cm;
+       }
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    p{
+        font-size: 12px;
+    }
+
+    li{
+        list-style: none;
+        text-align: center;
+        border: 1px #d9d9d9 solid;
+        text-align: left;
+    }
+    h1, h2, h3, h4, h5, h6{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        padding-bottom: 0;
+        margin: 0;
+    }
+    .form-content {
+        height: 3508px;
+        width: 100%;
+        /* width:2480px; */
+        padding: 0;
+        margin: 0;
+    }
+    .form-content .region {
+        text-align: center;
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+    .form-content .heading ul{
+        background-color:#2dce89;
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 100%;
+        padding: 0;
+
+    }
+    .form-content .heading ul li{
+        padding-right: 10px;
+        border: 0;
+    }
+
+
+    .form-content .date-part ul{
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+        width: 100%;
+        padding: 0;
+    }
+    .form-content .date-part ul li{
+        border: 0;
+        padding: 5px;
+    }
+    .form-content .date-part ul li:nth-child(3){
+        text-align: right;
+    }
+
+    .form-content .main_table ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        padding: 0;
+    }
+
+    .form-content .main_table ul li{
+        border: 1px #d9d9d9 solid;
+        text-align: left;
+        padding: 5px 20px 5px 10px;
+    }
+
+
+    .form-content .main_table ul:nth-child(2){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .form-content .conditions ul li {
+        list-style-type:decimal-leading-zero;
+        border: 0;
+        text-align: left;
+    }
+
+
+    .form-content .pack-info ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        padding: 0;
+    }
+
+    .form-content .pack-info ul li{
+        padding: 5px;
+        border: 0;
+    }
+
+
+    .form-content .documents ul{
+        display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+        width: 100%;
+        padding: 0;
+    }
+    .form-content .documents ul li h4{
+        display: inline;
+        clear: none;
+    }
+    .form-content .documents ul li:nth-child(1){
+        grid-area: 1 / 1 / 2 / 5;
+        border: 0;
+    }
+    .form-content .documents ul li:nth-child(2){
+        grid-area: 2 / 1 / 3 / 5;
+        border: 0;
+    }
+    .form-content .documents ul li:nth-child(3){
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    .form-content .documents ul li:nth-child(4){
+        grid-area: 3 / 2 / 4 / 3;
+    }
+    .form-content .documents ul li:nth-child(5){
+        grid-area: 3 / 3 / 4 / 4;
+    }
+    .form-content .documents ul li:nth-child(6){
+        grid-area: 3 / 4 / 4 / 5;
+    }
+
+    .form-content .documents ul li:nth-child(7) { border: 0; grid-area: 4 / 1 / 5 / 5; }
+    .form-content .documents ul li:nth-child(8) { grid-area: 5 / 1 / 6 / 2; }
+    .form-content .documents ul li:nth-child(9){ grid-area: 5 / 2 / 6 / 3; }
+    .form-content .documents ul li:nth-child(10) { grid-area: 5 / 3 / 6 / 4; }
+    .form-content .documents ul li:nth-child(11) { grid-area: 5 / 4 / 6 / 5; }
+
+    .office-info{
+        margin-top: 40px;
+    }
+    .office-info ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 100%;
+        padding: 0;
+    }
+
+    .office-info ul li{
+        text-align: center;
+        border: 0;
+    }
+
+
+    .office-info ul li p{
+        font-size: 8px;
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="form-content">
+        <div class="heading region">
+            <ul>
+                <li>
+                    <h3>Contract Paper for Internet Service Customer</h3>
+                    <h3>Your Connection to the Smart World</h3>
+                </li>
+                <li>
+                    <h3>contract form</h3>
+                </li>
+            </ul>
+        </div>
+        <div class="date-part region">
+            <ul>
+                <li>
+                    <h6>Contract signing date:</h6>
+                </li>
+                <li>
+                    <h6>Contract start date</h6>
+                </li>
+                <li>
+                    <h6>ID Number</h6>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main_table region">
+            <ul>
+                <li>
+                    <h3>Legal Customer</h3>
+                </li>
+                <li>
+                    <h3>Real Customer</h3>
+                </li>
+                <li>
+                    <h6>Full Name</h6>
+                </li>
+                <li>
+                    <h6>Full Name</h6>
+                </li>
+
+
+                <li>
+                    <h6>ID number:</h6>
+                </li>
+                <li>
+                    <h6>ID number:</h6>
+                </li>
+                <li>
+                    <h6>Occupation</h6>
+                </li>
+                <li>
+                    <h6>Occupation</h6>
+                </li>
+                <li>
+                    <h6>Education level:</h6>
+                </li>
+                <li>
+                    <h6>Education level:</h6>
+                </li>
+
+                <li>
+                    <h6>Gender</h6>
+                </li>
+                <li>
+                    <h6>Gender</h6>
+                </li>
+
+                <li>
+                    <h6>Address</h6>
+                </li>
+                <li>
+                    <h6>Address</h6>
+                </li>
+
+                <li>
+                    <h6>First contact number:</h6>
+                </li>
+                <li>
+                    <h6>First contact number:</h6>
+                </li>
+                <li>
+                    <h6>Second contact number:</h6>
+                </li>
+                <li>
+                    <h6>Second contact number:</h6>
+                </li>
+
+                <li>
+                    <h6>Email</h6>
+                </li>
+                <li>
+                    <h6>Email</h6>
+                </li>
+
+                <li>
+                    <h6>Type of use</h6>
+                </li>
+                <li>
+                    <h6>Type of use</h6>
+                </li>
+
+            </ul>
+            <ul>
+                <li>
+                    <h6>This section is for foreign nationals.</h6>
+                </li>
+                <li>
+                    <h6>Passport number:</h6>
+                </li>
+                <li>
+                    <h6>Country</h6>
+                </li>
+            </ul>
+        </div>
+        <div class="conditions region">
+            <ul>
+                <li>
+                    <p>Dear customer, you are responsible for using the Internet for terrorist and sabotage attacks against the government.</p>
+                </li>
+                <li>
+                    <p>The monthly fee must be paid at least two days before the end of the course.
+                         In case of delay in payment, the start of the period is calculated from the
+                          date of the contract and the days that have been interrupted due to delay in payment will not be canceled</p>
+                </li>
+                <li>
+                    <p>The internet link is for the individual only and if the transfer to third parties is observed, the internet link will be blocked.</p>
+                </li>
+                <li>
+                    <p>If the customer is dissatisfied, she/he can cancel the contract for a maximum of one week and be entitled to 70% of her payment.</p>
+                </li>
+                <li>
+                    <p>The cost of purchasing the device is borne by the person and the company is solely responsible for providing it.</p>
+                </li>
+                <li>
+                    <p>If the receiver device has a technical problem for any reason (except software problems) it is the responsibility of the customer.</p>
+                </li>
+                <li>
+                    <p>The customer can upgrade her/his internet speed at any time by paying a fee and signing a new contract.</p>
+                </li>
+                <li>
+                    <p>In case of technical problems, the customer is obliged to call the service numbers
+                         0780956195 and 0744537865. Otherwise, Vira Noavaran Company is not responsible for
+                          internet interruption.</p>
+                </li>
+                <li>
+                    <p>The customer is obliged to inform Vira Noavaran Company if immoral sites are open.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="pack-info region">
+            <ul>
+                <li>
+                    <h6>Package type</h6>
+                </li>
+                <li>
+                    <h6>Contract period</h6>
+                </li>
+                <li>
+                    <h6>Amount of money</h6>
+                </li>
+                <li>
+                    <h6>Receiver amount</h6>
+                </li>
+                <li>
+                    <h6>Extra charges</h6>
+                </li>
+                <li>
+                    <h6>Total</h6>
+                </li>
+            </ul>
+        </div>
+        <div class="documents region">
+            <ul>
+                <li>
+                    <h6>Documents: The customer must have one of the following documents on the day of the contract.</h6>
+                </li>
+                <li>
+                    <h6>Note: If one of the mentioned documents is not delivered to the company within 24 hours,
+                        your internet will be cut off and then you don't have the right to complain.</h6>
+                </li>
+                <li>
+                    <h6>NID Copy</h6>
+                </li>
+                <li>
+                    <h6>Passport copy</h6>
+                </li>
+                <li>
+                    <h6>License Copy</h6>
+                </li>
+                <li>
+                    <h6>Other Official Identity Card Copy</h6>
+                </li>
+
+                <li>
+                    <h6>How did you get to know us?</h6>
+                </li>
+
+                <li>
+                    <h6>Social Media</h6>
+                </li>
+                <li>
+                    <h6>Friends</h6>
+                </li>
+                <li>
+                    <h6>Ad Papers</h6>
+                </li>
+                <li>
+                    <h6>Others</h6>
+                </li>
+            </ul>
+        </div>
+        <div class="agrement region">
+            <p>By confirming the above information and accepting all the
+                items mentioned in the wireless internet service contract.
+                I am an applicant for internet services and I am obliged to pay the mentioned fee from the day
+                of signing the contract and activating the services.</p>
+            <h6>Signature and stamp of the sales manager or representative:</h6>
+        </div>
+
+
+        <div class="office-info region">
+            <ul>
+                <li>
+                    <p>Central Office: Kabul, Dasht-e-Barchi,Shaheed-Mazari-Road, Naqqash</p>
+                </li>
+                <li>
+                    <p>+93 780 956195 / +93 744 537865</p>
+                </li>
+                <li>
+                    <p>sales@viranawawaran.af</p>
+                </li>
+                <li>
+                    <p>www.viranawawaran.af</p>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

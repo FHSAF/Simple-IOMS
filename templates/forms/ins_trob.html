@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    {% include '_partials/_alerts.html' %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header text-center">
+        <h3 class="title">Installation & Troubleshooting Form</h3>
+      </div>
+      <div class="card-body">
+          <form method="POST"> {% csrf_token %}
+              {{ form.non_field_errors }}
+            <div class="row">
+              <div class="form-group col-md-2">
+                {{ form.action_type.errors }}
+                <label for="{{ form.action_type.id_for_label }}">Action Type</label>
+                {{ form.action_type }}
+              </div>
+              <div class="form-group col-md-2">
+
+                <label for="{{ form.customer.id_for_label }}">Customer</label>
+                {{ form.customer }}
+              </div>
+              <div class="form-group col-md-8">
+                {{ form.device_used.errors }}
+                <label for="{{ form.device_used.id_for_label }}">Device used</label>
+                {{ form.device_used }}
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="from-group col-md-3">
+                    {{ form.cable.errors }}
+                    <label for="{{ form.cable.id_for_label }}">Cable used</label>
+                    {{ form.cable }}
+                </div>
+                <div class="from-group col-md-3">
+                    {{ form.signal.errors }}
+                    <label for="{{ form.signal.id_for_label }}">Signal</label>
+                    {{ form.signal }}
+                </div>
+                <div class="from-group col-md-3">
+                    {{ form.radio.errors }}
+                    <label for="{{ form.radio.id_for_label }}">Radio</label>
+                    {{ form.radio }}
+                </div>
+                <div class="from-group col-md-3">
+                    {{ form.stand.errors }}
+                    <label for="{{ form.stand.id_for_label }}">Stand</label>
+                    {{ form.stand }}
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                {{ form.fault_observed.errors }}
+                <label for="{{ form.fault_observed.id_for_label }}">Fault Observed</label>
+                {{ form.fault_observed }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-12">
+                {{ form.action_taken.errors }}
+                <label for="{{ form.action_taken.id_for_label }}">Action Taken</label>
+                {{ form.action_taken }}
+              </div>
+            </div>
+            <div class="row">
+                <h4 class="pl-3">Please specify the time you have been doing the process</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>From</label>
+                    <input type="datetime-local" class="form-control" placeholder="Country" name="from_time">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>To</label>
+                    <input type="datetime-local" class="form-control" placeholder="Country" name="to_time">
+                  </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-fill btn-primary">Save</button>
+          </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endblock %}

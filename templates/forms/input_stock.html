@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content">
+    {% include '_partials/_alerts.html' %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header text-center">
+        <h3 class="title">Input Stock Form</h3>
+      </div>
+      <div class="card-body">
+          <form method="POST"> {% csrf_token %}
+              {{ form.non_field_errors }}
+            <div class="row">
+              <div class="form-group col-md-3">
+                {{ form.good_name.errors }}
+                <label for="{{ form.good_name.id_for_label }}">Good Name</label>
+                {{ form.good_name }}
+              </div>
+              <div class="form-group col-md-4">
+                {{ form.device_from.errors }}
+                <label for="{{ form.device_from.id_for_label }}">From</label>
+                {{ form.device_from }}
+              </div>
+              <div class="form-group col-md-3">
+                {{ form.input_type.errors }}
+                <label for="{{ form.input_type.id_for_label }}">Input Type</label>
+                {{ form.input_type }}
+              </div>
+              <div class="form-group col-md-2">
+                {{ form.bill.errors }}
+                <label for="{{ form.bill.id_for_label }}">Bill Image</label>
+                {{ form.bill }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-3">
+                {{ form.price.errors }}
+                <label for="{{ form.price.id_for_label }}">price</label>
+                {{ form.price }}
+              </div>
+              <div class="form-group col-md-3">
+                {{ form.currency.errors }}
+                <label for="{{ form.currency.id_for_label }}">currency</label>
+                {{ form.currency }}
+              </div>
+              <div class="form-group col-md-3">
+                {{ form.device_status.errors }}
+                <label for="{{ form.device_status.id_for_label }}">Status</label>
+                {{ form.device_status }}
+              </div>
+              <div class="form-group col-md-3">
+                {{ form.quantity.errors }}
+                <label for="{{ form.quantity.id_for_label }}">Qt</label>
+                {{ form.quantity }}
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Date In</label>
+                  <input type="date" class="form-control" name="date_in">
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-fill btn-primary">Save</button>
+          </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endblock %}
